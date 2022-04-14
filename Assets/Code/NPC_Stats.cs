@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPC_stats : MonoBehaviour
+public class NPC_Stats : MonoBehaviour
 {
     public string NPCName;
     public GameObject TextName;
@@ -16,6 +16,9 @@ public class NPC_stats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TextName != null)
+        if (TextName != null){
+            TextName.transform.LookAt(Camera.main.transform.position);
+            TextName.transform.Rotate (0, 180, 0);
+        }
     }
 }
