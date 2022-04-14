@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------
+/*-----------------------------------------------------------------------
 // <copyright file="CameraPointer.cs" company="Google LLC">
 // Copyright 2020 Google LLC
 //
@@ -22,29 +22,14 @@ using UnityEngine;
 /// <summary>
 /// Sends messages to gazed GameObject.
 /// </summary>
-///
 public class CameraPointer : MonoBehaviour
 {
-
-    public GameObject macron_text;
-    private const float _maxDistance = 20;
+    private const float _maxDistance = 10;
     private GameObject _gazedAtObject = null;
-    public Vector3 playerPosition;
-    public Vector3 objectPosition;
 
     /// <summary>
     /// Update is called once per frame.
     /// </summary>
-    /// 
-
-    public void Start()
-    {
-        macron_text = GameObject.FindGameObjectWithTag("macron_text");
-        macron_text.SetActive(false);
-
-    }
-
-
     public void Update()
     {
         // Casts ray towards camera's forward direction, to detect if a GameObject is being gazed
@@ -53,12 +38,12 @@ public class CameraPointer : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
             // GameObject detected in front of the camera.
-            if (_gazedAtObject != hit.transform.gameObject) {
+            if (_gazedAtObject != hit.transform.gameObject)
+            {
                 // New GameObject.
                 _gazedAtObject?.SendMessage("OnPointerExit");
                 _gazedAtObject = hit.transform.gameObject;
-                _gazedAtObject.SendMessage("OnPointerEnter");      
-                StartCoroutine(waitMovement());
+                _gazedAtObject.SendMessage("OnPointerEnter");
             }
         }
         else
@@ -67,20 +52,12 @@ public class CameraPointer : MonoBehaviour
             _gazedAtObject?.SendMessage("OnPointerExit");
             _gazedAtObject = null;
         }
-    }
 
-    IEnumerator waitMovement()
-    {
-                yield return new WaitForSeconds(3f);
-        if (_gazedAtObject.tag == "target")
+        // Checks for screen touches.
+        if (Google.XR.Cardboard.Api.IsTriggerPressed)
         {
-            gameObject.transform.position = _gazedAtObject.transform.position;
-        }
-        else if (_gazedAtObject.tag == "macron")
-        {
-            //Destroy(_gazedAtObject);
-            macron_text.SetActive(true);
-
+            _gazedAtObject?.SendMessage("OnPointerClick");
         }
     }
 }
+*/

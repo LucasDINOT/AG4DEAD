@@ -19,6 +19,8 @@ TagManager:
   - target_amphi_top_out
   - target_entree_serveur
   - target_sortie_serveur
+  - macron_text
+  - macron
   layers:
   - Default
   - TransparentFX
