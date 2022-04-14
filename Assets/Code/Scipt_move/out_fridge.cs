@@ -70,7 +70,7 @@ public class out_fridge : MonoBehaviour
                 yield return new WaitForSeconds(3f);
         if (_gazedAtObject.tag == "target_sortie_frigo")
         {
-            gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(4,2,-2);
+            gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(3.64f,2,-2.26f);
         }
     }
 }

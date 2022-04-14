@@ -70,7 +70,7 @@ public class out_philou : MonoBehaviour
                 yield return new WaitForSeconds(3f);
         if (_gazedAtObject.tag == "target_sortie_philou")
         {
-            gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(-4,2,1);
+            gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(-3.96f,2,0.74f);
         }
     }
 }

@@ -67,7 +67,8 @@ public class enter_amphi_bot : MonoBehaviour
 
     IEnumerator waitMovement()
     {
-                yield return new WaitForSeconds(3f);
+        //_gazedAtObject.transform.localScale +=  new Vector3(20f, 20f, 20f);
+        yield return new WaitForSeconds(3f);
         if (_gazedAtObject.tag == "target_amphi_bot")
         {
             gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(-7,2,0);
