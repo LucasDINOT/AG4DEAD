@@ -17,4 +17,5 @@ Shader "GUI/3D Text Shader"
                 combine primary, texture * primary
             }
         }
+    }
 }
