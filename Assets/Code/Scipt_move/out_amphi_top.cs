@@ -23,7 +23,7 @@ using UnityEngine;
 /// Sends messages to gazed GameObject.
 /// </summary>
 ///
-public class CameraPointer : MonoBehaviour
+public class out_amphi_top : MonoBehaviour
 {
     private const float _maxDistance = 20;
     private GameObject _gazedAtObject = null;
@@ -68,9 +68,9 @@ public class CameraPointer : MonoBehaviour
     IEnumerator waitMovement()
     {
                 yield return new WaitForSeconds(3f);
-        if (_gazedAtObject.tag == "target")
+        if (_gazedAtObject.tag == "target_amphi_top_out")
         {
-            gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(10,0,0);
+            gameObject.transform.position = _gazedAtObject.transform.position + new Vector3(-1,2,7);
         }
     }
 }

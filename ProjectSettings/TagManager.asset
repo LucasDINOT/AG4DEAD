@@ -5,6 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - target
+  - target_entree_sormiou
+  - target_sortie_sormiou
+  - target_entree_bde
+  - target_sortie_bde
+  - target_sortie_philou
+  - target_entree_philou
+  - target_entree_frigo
+  - target_sortie_frigo
+  - target_amphi_bot
+  - target_amphi_bot_out
+  - target_amphi_top
+  - target_amphi_top_out
+  - target_entree_serveur
+  - target_sortie_serveur
   layers:
   - Default
   - TransparentFX
